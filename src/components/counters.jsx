@@ -13,7 +13,11 @@ class Counters extends Component {
     return (
       <>
         {this.state.counters.map((counter) => {
-          return <Counter value={counter.value} key={counter.id} />;
+          return (
+            <Counter value={counter.value} key={counter.id}>
+              <p>Countrer #{counter.id}</p>
+            </Counter>
+          );
         })}
       </>
     );
