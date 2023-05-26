@@ -28,6 +28,12 @@ class App extends Component {
     counters[itemIndex].value++
     this.setState(counters)
   }
+  handleDecrement = (counterID)=>{
+    const {counters} = this.state
+    const itemIndex = counters.findIndex(counter => counter.id === counterID);
+    counters[itemIndex].value--
+    this.setState(counters)
+  }
   render() { 
     return (
       <>
@@ -38,6 +44,7 @@ class App extends Component {
           onReset={this.handleReset}
           onDelete={this.handleDelete}
           onIncrement={this.handleIncrement}
+          onDecrement={this.handleDecrement}
         >
         </Counters>
       </main>
